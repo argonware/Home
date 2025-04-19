@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
 :root {
   --primary-color1: #360167;
   --primary-color2: #6b0772;
@@ -83,10 +88,17 @@
   --text-muted: #ccc;
 }
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body);     
   background: var(--bg-1);
   color: var(--text-1);
+  width: 100%;
+  left: 0;
 } 
+main {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
 .logo {
   width: 50px;
   border-radius: var(--border-radius-rounded);
@@ -101,6 +113,7 @@ nav {
   left: 0;
   padding: 0.5rem;
   width: 100vw;
+  z-index: 1000;
 }
 i {
   font-size: 1.5rem;
@@ -114,17 +127,14 @@ i {
   background: var(--bg-1);
 }
 .float {
-  animation: float 2s 0 infinite;
+  animation: float 2s 0s infinite ease-in-out;
 }
 @keyframes float { 
   0% {
     transform: translateY(0px);
   }
-  33% {
-    transform: translateY(-5px);
-  }
-  66% {
-    transform: translateY(5px);
+  50% {
+    transform: translateY(-5px); 
   }
   100% {
     transform: translateY(0px);
@@ -132,7 +142,6 @@ i {
 }
 i:hover {
   color: var(--primary-color2);
-  box-shadow: var(--shadow-md);
 }
 .component {
   box-shadow: var(--component-shadow);
@@ -157,7 +166,7 @@ section {
   justify-content: center;
 }
 .section-center {
-  width: 90%;
+  max-width: 1000px;
 }
 .particled {
   position: relative;
@@ -241,7 +250,7 @@ header {
   box-shadow: var(--shadow-smal);
 }
 .header-heading {
-  font-family: var(--font-heading);
+  font-family: gabriela;
   font-size: 3rem;
   color: var(--text-1);
   text-align: center;
@@ -255,7 +264,7 @@ header {
   margin-top: var(--spacing-lg);
   width: 100%;
 }
-.cta-btn {
+.cta-btn, .cta-btn2 {
   padding: var(--spacing-x-smal);
   border-radius: var(--border-radius-smal);
   background: var(--primary-color4);
@@ -267,28 +276,15 @@ header {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.cta-btn:hover {
-  background: var(--primary-color2);
-  color: var(--text-1);
-  box-shadow: var(--shadow-md);
-}
 .cta-btn2 {
-  padding: var(--spacing-x-smal);
-  border-radius: var(--border-radius-smal);
-  background: var(--bg-component);
-  color: var(--text-1);
-  font-size: 1.5rem;
-  font-family: var(--font-heading);
-  border: 2px solid var(--primary-color4);
-  box-shadow: var(--shadow-smal);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+ background: rgba(0, 0, 0, 0.247);
 }
-.cta-btn2:hover {
+.cta-btn:hover, .cta-btn2:hover {
   background: var(--primary-color2);
   color: var(--text-1);
   box-shadow: var(--shadow-md);
 }
+
 @keyframes particle {
   0% {
     bottom: 0%;
@@ -323,4 +319,61 @@ header {
   .about-us-inner {
     background: var(--bg-component);
     border-radius: var(--border-radius-md);
+}
+.about-us-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--spacing-x-smal); 
+  padding: var(--spacing-x-smal); 
+}
+.card {
+ background: #00000096;
+  border-radius: var(--border-radius-smal);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-smal);
+  border: 1px solid var(--primary-color4);
+  transition: all 0.3s ease-in-out;
+  animation: float 2s 0s infinite ease-in-out;
+}
+.card:hover {
+  background: var(--bg-component);
+  color: var(--text-1);
+  scale: 1.05;
+  transform: translateY(-5px);
+}
+
+.float {
+  animation: float 2s 0 infinite;
+}
+.about-card-title {
+  font-size: 2rem;
+  text-align: center;
+  background: var(--primary-color4);
+  width: fit-content;
+  margin-inline: auto;
+  border-radius: 50px;
+  padding: var(--spacing-x-smal);
+  transform: translateY(-75%);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.about-card-title:hover {
+  background: var(--bg-component);
+  border: 1px solid var(--primary-color4);
+  color: var(--text-1);
+}
+ .about-icon {
+  width: 100%;
+  font-size: 3rem;
+  min-height: 150px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: var(--text-1);
+  margin-bottom: var(--spacing-smal);
+  border-bottom: 2px solid var(--primary-color4);
+  background: var(--primary-color3);
+  border-radius: var(--border-radius-smal);
 }

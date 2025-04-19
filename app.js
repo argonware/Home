@@ -17,7 +17,6 @@ function particles(e) {
     )}s infinite linear`;
     div.style.opacity = 0;
   }
-  return e;
 }
 
 document.querySelectorAll(".particled").forEach((e) => {
