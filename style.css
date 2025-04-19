@@ -86,7 +86,6 @@ body {
   font-family: var(--font-body);
   background: var(--bg-1);
   color: var(--text-1);
-  overflow-x: hidden;  
 } 
 .logo {
   width: 50px;
@@ -102,7 +101,6 @@ nav {
   left: 0;
   padding: 0.5rem;
   width: 100vw;
-  animation: inn 2s  0 infinite;
 }
 i {
   font-size: 1.5rem;
@@ -115,7 +113,10 @@ i {
   box-shadow: var(--shadow-smal);
   background: var(--bg-1);
 }
-@keyframes inn { 
+.float {
+  animation: float 2s 0 infinite;
+}
+@keyframes float { 
   0% {
     transform: translateY(0px);
   }
