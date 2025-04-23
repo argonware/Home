@@ -1,23 +1,5 @@
 function animationSet() {
-    
-    const nav = document.querySelector("nav");
-    const main = document.querySelector("main");
-    
-    nav.addEventListener("mouseover", () => {
-        main.style.filter = `blur(10px)`;
-     })
-    nav.addEventListener("mouseleave", () => {
-        main.style.filter = `blur(0px)`;
-     })
-     window.addEventListener("scroll", () => {
-        if (window.scrollY > 500) {
-            nav.classList.add("nav-scroll");
-        } else {
-            nav.classList.remove("nav-scroll");
-        }  
-     })
-    
-    // nav hove end
+
     let num = 0;
     const particles = (element) => {
     num++;
