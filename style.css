@@ -186,7 +186,7 @@ nav {
     opacity: 0;
   }
   100% {
-    transform: translateY(-1000px);
+    transform: translateY(-100vh);
     opacity: 1;
   }
 }
