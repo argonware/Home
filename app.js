@@ -11,6 +11,7 @@ if (num >= 100) return; // limit the number of particles
                 particle.style.opacity = 0; 
                 element.appendChild(particle);
                 element.style.overflow = "hidden";
+                particle.style.zIndex = 100;
                 particle.style.position = "absolute";
                 particle.style.bottom = "0";
                 particle.style.width = Math.random() * 10 + "px";
@@ -19,9 +20,7 @@ if (num >= 100) return; // limit the number of particles
                 particle.style.backgroundColor = `var(--primary-color${Math.floor(Math.random() * 5)})`;
                 particle.style.left = Math.random() * 95 + "vw";
                 particle.style.boxShadow = `0 0 1rem .1rem var(--primary-color${Math.floor(Math.random() * 5)})`;
-                particle.style.animation = ` particle 4s ${Math.random()*5}s linear infinite`;
-           console.log(element);
-           
+                particle.style.animation = ` particle 4s ${Math.random()*5}s linear infinite`;  
             })
             particles(element);
 }
@@ -47,14 +46,28 @@ const header = document.querySelector("header");
     .from(".header-heading", { height: 0, opacity: 0, ease: "power" }, "<")
     .from(".header-description", { height: 0, opacity: 0, ease: "power" }, "<")
     .from(".header-cta", { scale: 0, opacity: 0, ease: "power" }, "<");        
-
-
-
-    
-    
-    
     // slider functionality
     sliderAnim();
+    
+ for (let i = 1; i < 5; i++) {
+   const crEl = document.querySelector(`.header-bg-part${i}`);
+   if (i <= 2) {
+       crEl.style.animation = `header-bg 8s ${Math.floor(Math.random()* 10)}s  infinite alternate` 
+    }
+    else {
+        crEl.style.animation = `header-bg2 8s ${Math.floor(Math.random()* 10)}s  infinite alternate` 
+    }
+ }
+// nav is smaller on scroll funtion
+const nav = document.querySelector("nav");
+window.addEventListener("scroll", () => {
+    if (window.scrollY ) {
+        nav.classList.add("shorter-nav");
+    }
+    else {
+        nav.classList.remove("shorter-nav");
+    }
+})
 
 }
 
@@ -65,16 +78,14 @@ function sliderAnim() {
     ScrollTrigger.create({
         trigger: ".about-section-out",
         start: "top top",   
-        pin: ".about-section",
+        pin: ".about-section-out",
         scrub: 1,
         endTrigger: ".about-section-out",
         end: "+=1000",
-        markers: true,
+        markers: true, 
         animation: tl2,
         invalidateOnRefresh: true,
-        onEnter: () => {
-            gsap.to(".slider-container", { xPercent: -75, duration: 1 });
-        },
+        immediateRender: false
     });   
 }
 
