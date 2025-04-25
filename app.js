@@ -1,9 +1,11 @@
 function animationSet() {
 
+
+
     let num = 0;
     const particles = (element) => {
     num++;
-if (num >= 100) return; // limit the number of particles
+if (num >= 50) return; // limit the number of particles 
 
     requestAnimationFrame(() => {
                 const particle = document.createElement("div");
@@ -23,6 +25,8 @@ if (num >= 100) return; // limit the number of particles
                 particle.style.animation = ` particle 4s ${Math.random()*5}s linear infinite`;  
             })
             particles(element);
+
+
 }
 const header = document.querySelector("header");
     particles(header);
@@ -86,7 +90,21 @@ function sliderAnim() {
         animation: tl2,
         invalidateOnRefresh: true,
         immediateRender: false
-    });   
+    });  
+    
+    // services scroll animation
+    const servicesCards = gsap.utils.toArray(".cards");
+    gsap.from(".service-card", {
+        duration: 1,
+        opacity: 0,
+        stagger: .25,
+        scrollTrigger: {
+            trigger: ".service-card",
+            start: "top center",
+            xPercent: 50,
+            duration: 1.5, 
+        }
+    })
 }
 
 

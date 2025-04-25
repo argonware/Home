@@ -470,6 +470,7 @@ section {
   display: grid;
   grid-template-rows: 1fr 0fr auto; 
   position: relative;
+  animation: transition1 2s;
 } 
 .service-card-pic {
   display: flex;
@@ -533,6 +534,7 @@ margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: transition1 2s;
   }
   .header-text {
     text-align: center;
@@ -540,9 +542,22 @@ margin: auto;
     padding-inline: 1rem;
   }
   .services-body {
+    animation: transition1 2s;
     grid-template-columns: 1fr 1fr;
   }
   .service-card  button {
    font-size: 2rem;
   }
+  
+
 }
+
+  @keyframes transition1 {
+    0% {
+      scale: 0;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
