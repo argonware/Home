@@ -32,7 +32,7 @@
     </nav>
 
     <main>
-      <header class="particled"> 
+      <header class="particled" id="home"> 
         <div class="header-bg-cont">    
           <div class="header-bg-part1 hh-1"></div>
           <div class="header-bg-part2 hh-1"></div>
@@ -57,7 +57,7 @@
         </div>
       </header>
 
-      <section class="about-section-out">
+      <section class="about-section-out" id="about">
         <h2 class="section-heading float">Our Story</h2>
         <div class="section-body about-section">
           <div class="slider-container">
@@ -133,7 +133,7 @@
       </section>
 
       <!-- services section -->
-      <section class="services-section"> 
+      <section class="services-section" id="services"> 
         <h2 class="section-heading float">Our Services</h2>
         <div class="section-body services-body">
           
@@ -205,7 +205,7 @@
       </section>
        
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="section-center">
           <h2 class="section-heading">Contact</h2>
           <div class="contact-body">
@@ -215,7 +215,7 @@
 <textarea name="Message" id="Message" placeholder="Message: e.g... i want a website for my e-commerce store"></textarea>
 <button type="submit" id="submit">Sumbit</button>
             </form>
-            <!-- <div class="contact-info">
+            <div class="contact-info">
               <div class="social-icons">
               <a rel="noopener" href="https://facebook.com" target="_blank" aria-label="Twitter">
                 <i class="fab fa-facebook"></i>
@@ -244,13 +244,22 @@
               </a>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
     </main>
-
-    <!-- scripts -->      
-
+      <footer>
+        <div class="footer-center">
+          <ul class="footer-links">
+            <li class="footer-link"><a href="#">Home</a></li> 
+            <li class="footer-link"><a href="#about">About</a></li>
+            <li class="footer-link"><a href="#services">Services</a></li>
+            <li class="footer-link"><a href="#contact">Contact</a></li>
+          </ul>
+            <h2 class="footer-h">&copy; ArgonWare  2025. All rights reserved.</h2>
+        </div>
+      </footer>
+    <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
     <script src="app.js" defer></script>

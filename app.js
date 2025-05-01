@@ -40,6 +40,7 @@ function animationSet() {
   window.addEventListener("scroll", () => {
     if (window.scrollY) {
       nav.classList.add("shorter-nav");
+
     } else {
       nav.classList.remove("shorter-nav");
     }
@@ -49,34 +50,20 @@ function animationSet() {
 //  slider functionality
 function sliderAnim() {
   const tl2 = gsap.timeline();
-  tl2.to(".slider-container", { xPercent: -75 });
+  tl2.to(".slider-container", { xPercent: -75});
 
   ScrollTrigger.create({
-    trigger: ".about-section-out",
-    start: "top top",
+    trigger: ".slider-container",
+    start: "top 100px",
     pin: ".about-section-out",
     scrub: 1,
     endTrigger: ".about-section-out",
     end: "+=1000",
-    markers: true,
     animation: tl2,
     invalidateOnRefresh: true,
-    immediateRender: false,
+    immediateRender: false
   });
 
-  // services scroll animation
-  const servicesCards = gsap.utils.toArray(".cards");
-  gsap.from(".service-card", {
-    duration: 1,
-    opacity: 0,
-    stagger: 0.25,
-    scrollTrigger: {
-      trigger: ".service-card",
-      start: "top center",
-      xPercent: 50,
-      duration: 1.5,
-    },
-  });
 }
 // particles effect
 let num = 0;
