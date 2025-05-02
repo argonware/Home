@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Gabriela&family=Serif+Typeface&family=Sans+Serif+Typeface&display=swap");
 :root {
-  --primary-color1: #2f005b;  /* Deep Purple */
-  --primary-color2: #003967;  /* Dark Magenta */
-  --primary-color3: #660b76;  /* Rich Burgundy */
-  --primary-color4: #9612b1;  /* Vibrant Violet */
-  --primary-color5: #b626cf;  /* Intense Pink */
-  --primary-color6: #cf5ce6;  /* Warm Rose */
-  --primary-color7: #fbbcab;  /* Soft Coral */
-  --primary-color8: #ffb4c9;  /* Light Pastel Pink */
 
-  /* Background & Neutral Colors */
-  --bg-component: rgba(124, 8, 89, 0.2);  /* Softer Overlay */
-  --bg-dark: #2E2E2E;  /* Main dark theme background */
-  --bg-light: #F8F9FA;  /* Clean white for contrast */
-  --bg-gradient: linear-gradient(135deg, var(--primary-color1), var(--primary-color2));  /* Futuristic gradient */
+    --bg-darkest-violet: #10002bff; /* Main background, deep shadows */
+    --bg-mid-violet: #3c096cff; /* Card backgrounds, subtle sections */
+    --bg-light-violet: #e0aaffff; /* Very light backgrounds, accents */
+    --text-primary-violet: #e0aaffff; /* Headings, important text */
+    --text-secondary-violet: #c77dffff; /* Subheadings, less important text */
+    --border-violet: #5a189aff; /* Borders, dividers */
+    --accent-violet: #7b2cbfff; /* Highlights, button hover states */
+    --gradient-violet-1: linear-gradient(to right, var(--bg-darkest-violet), var(--bg-mid-violet)); /* Main background gradient */
+    --gradient-violet-2: linear-gradient(to bottom, var(--bg-mid-violet), var(--bg-light-violet)); /* Card background gradient */
+    --gradient-violet-3: linear-gradient(to top, var(--accent-violet), var(--text-primary-violet)); /* Button gradient, heading gradient */
+    --gradient-violet-4: linear-gradient(to bottom right, var(--bg-darkest-violet), var(--border-violet)); /* Subtle accent gradient */
   /* spacing */
   --spacing-xx-smal: 0.25rem;
   --spacing-x-smal: 0.5rem;
@@ -56,18 +54,6 @@
   --shadow-x-lg: 0 0 1.5rem rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 0 1.75rem rgba(0, 0, 0, 0.1);
   --component-shadow: 0 0 1rem #a109737e;
-  /* bgs */
-  --bg-1: rgb(24, 24, 24);
-  --bg-2: rgb(36, 36, 36);
-  --bg-3: rgb(48, 48, 48);
-  --bg-4: rgb(59, 59, 59); 
-  --bg-5: rgb(71, 71, 71);
-  /* text color */
-  --text-1: #fff;
-  --text-2: #d6d6d6;
-  --text-3: #b0b0b0;
-  --text-4: #a0a0a0;
-  --text-muted: #838383;
 }
 
 
@@ -88,8 +74,8 @@ html {
 
 
 body {
-  background: var(--bg-1);
-  color: var(--text-1);
+  background: var(--gradient-violet-1);
+  color: var(--text-primary-violet);
 } 
 
 
@@ -112,14 +98,14 @@ nav {
 }
 .nav-center {
   width: 100%;
-  padding-inline: var(--spacing-x-lg);
+  padding-inline: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-component);
-  box-shadow: 0 0 3px 5px solid var(--bg-component);
-  padding: var(--spacing-component);
-  border: 2px solid var(--primary-color4);
+  background: var(--bg-gradient);
+  box-shadow: 0 0 3px 5px solid var(--bg-darkest-violet);
+  padding-block: var(--spacing-component);
+  border: 2px solid var(--bg-light-violet);
   border-radius: var(--border-radius-lg);
   margin: var(--spacing-component);
   box-shadow: var(--shadow-lg);
@@ -153,14 +139,14 @@ nav {
   border: none;
   cursor: pointer;
   font-size: xx-large;
-  color: var(--primary-color4);
+  color: var(--text-primary-violet);
   transition: all 0.4s;
 }
 .nav-toggle:hover {
-  background: var(--primary-color4);
+  background: var(--accent-violet);
   border-radius: var(--border-radius-smal);
   box-shadow: var(--shadow-smal);
-  color: var(--text-1);
+  color: var(--text-secondary-violet);
 }
 
 @keyframes particle {
@@ -190,7 +176,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg-gradient);
+  background: var(--gradient-violet-1);
   position: sticky;
   top: 0;
 }
@@ -210,13 +196,12 @@ header .header-center {
 .header-img {
   width: 80%;
   margin-left: 20%;
-  border-radius: 50%;
+  border-radius: var(--border-radius-lg);
 }
  .header-heading {
   font-family: var(--font-primary);
   font-size: 4rem;
   padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--primary-color4);
 }
  .header-description {
   font-family: var(--font-body);
@@ -251,13 +236,13 @@ header .header-center {
 }
  .header-cta button {
   padding: var(--spacing-md) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--primary-color3), var(--primary-color1));
+  background: var(--gradient-violet-4);
   box-shadow:
-  -5px -5px 9px 1px var(--primary-color1),
-  5px 5px 9px 3px var(--primary-color2)
+  -5px -5px 9px 1px var(--accent-violet),
+  5px 5px 9px 3px var(--bg-mid-violet)
   ;
   border: none;
-  color: var(--text-1);
+  color: var(--text-primary-violet);
   border-radius: var(--border-radius-lg);
   font-size: 1.5rem;
   font-family: var(--font-body);
@@ -268,8 +253,8 @@ header .header-center {
   background: linear-gradient(135deg, var(--primary-color1), var(--primary-color3));
   box-shadow: var(--shadow-md);
   box-shadow:
-  -5px -5px 9px 1px var(--primary-color2),
-  5px 5px 9px 3px var(--primary-color1)
+  -5px -5px 9px 1px var(--bg-mid-violet),
+  5px 5px 9px 3px var(--bg-darkest-violet)
   ;
 }
 .header-bg-cont {
@@ -415,7 +400,7 @@ section {
 .slide-body {
   display: grid;
   padding: 1rem;
-  border: 2px solid grey;
+  border: 2px solid var(--accent-violet);
   background: #00000038;
   margin-inline: 1rem;
   grid-template-columns: 1fr 1fr;
@@ -425,7 +410,7 @@ section {
   font-family: var(--font-body);
   font-size: 1.5rem;
   padding: var(--spacing-lg) 0;
-  color: var(--text-2);
+  color: var(--text-primary-violet);
 }
 .slide-pic {
  width: 100%; 
@@ -468,13 +453,12 @@ section {
 }
 .service-card {
   margin: 1rem 1rem;
-  background: var(--bg-3);
+  background: var(--bg-mid-violet);
   border-radius: 10px;
   box-shadow: var(--shadow-md);
-  border-bottom: 2px solid var(--primary-color4);
+  border-bottom: 2px solid var(--accent-violet);
   font-family: var(--font-body);
   font-size: 1rem; 
-  color: var(--text-2);
   display: grid;
   grid-template-rows: 1fr 0fr auto; 
   position: relative;
@@ -484,14 +468,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary-color3); 
   width: 100%;
 }
 .service-card-text {
   padding: 1rem;
 }
 .service-card-pic {
-  background: var(--primary-color2);
+  background: var(--accent-violet);
   height: 100%;
   border-radius: 10px;
 
@@ -508,21 +491,20 @@ margin: auto;
   border-radius: 50%;
   margin-inline: auto;
   border: none;
-  background: var(--primary-color4);
+  background: var(--accent-violet);
   color: var(--text-1);
   font-size: xx-large;
   cursor: pointer;
   transition: all 0.4s;
   transform: translateY(-50%);
   position: absolute;
-  border: 4px solid var(--bg-2);
+  border: 4px solid var(--bg-mid-violet);
 }
 .service-card-heading {
   color: var(--text-1);
 }
 .service-card-btn:hover {
-  background: var(--text-1);
-  color: var(--primary-color4);
+  color: var(--bg-darkest-violet);
 }
 .service-card-text {
   padding-top: 2rem;
@@ -602,8 +584,8 @@ grid-template-columns: 1fr 1fr;
 form {
   margin: var(--spacing-md); 
   margin: var(--spacing-md);
-  border-bottom: 2px solid var(--primary-color4);
-  background: var(--bg-3);
+  border-bottom: 2px solid var(--accent-violet);
+  background: var(--bg-mid-violet);
   display: flex;
   height: fit-content;
   flex-direction: column;
@@ -620,7 +602,7 @@ form input {
   outline: none;
  margin-bottom: var(--spacing-md);
  border-radius: 10px;
- border-bottom: 2px solid var(--primary-color4);
+ border-bottom: 2px solid var(--accent-violet);
  padding: 1rem 0.1rem;
  color: var(--text-1);
 }
@@ -632,7 +614,7 @@ textarea {
   outline: none;
   margin-bottom: var(--spacing-md);
   border-radius: 10px;
-  border-bottom: 2px solid var(--primary-color4);
+  border-bottom: 2px solid var(--accent-violet);
   padding: 1rem 0.1rem;  
   resize: vertical;
   min-height: 200px;
@@ -654,7 +636,7 @@ textarea {
 .contact-info {
   margin: var(--spacing-md); 
   margin: var(--spacing-md);
-  background: var(--bg-3);
+  background: var(--bg-mid-violet);
   display: flex;
   height: fit-content;
   flex-direction: column;
@@ -664,7 +646,7 @@ textarea {
   border-radius: var(--border-radius-lg);
 }
 .contact-info {
-  border-bottom: 2px solid var(--primary-color4);
+  border-bottom: 2px solid var(--accent-violet);
 }
 .contact-info a {
   text-decoration: none;
@@ -697,4 +679,48 @@ footer {
 .footer-link:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--gradient-violet-4);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;     
+  align-items: center;
+  z-index: 110;
+  transition: all 0.4s;
+}
+.nav-links-center {
+  list-style-type: none;
+  width: 100%;
+}
+.nav-link {
+  font-size: xx-large;
+  width: 100%;
+  padding: var(--spacing-smal); 
+  margin: var(--spacing-smal);
+  background: var(--bg-mid-violet);
+  border-radius: var(--border-radius-smal);
+  cursor: pointer;
+  display: flex;
+  transition: all 0.4s;
+  border: 2px solid var(--primary-color2) 2px solid var(--accent-violet) 2px solid var(--bg-light-violet) 2px solid var(--bg-darkest-violet);
+}
+.nav-link:hover {
+  transform: translateY(-10%);
+}
+.nav-link a {
+  color: var(--text-2);
+  width: 100%; 
+  text-decoration: none;
+}
+.close-nav {
+  background: var(--error-color);
+}
+.nav-closed {
+  transform: translateY(100%);
+  cursor: pointer;
 }

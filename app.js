@@ -119,3 +119,7 @@ window.addEventListener("resize", () => {
 //     }
 //   }, 100);
 // });
+function toggleClass(_class, element) {
+  const target = document.querySelector(element);
+  target.classList.toggle(_class);
+} 

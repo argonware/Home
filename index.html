@@ -11,13 +11,13 @@
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> 
     <meta name="description" content="ArgonWare - Leading web development, design, and animation studio. We create stunning websites, engaging user experiences, and cutting-edge digital solutions that drive business growth." />
     <meta name="keywords" content="web development, web design, UI/UX design, animation, motion graphics, digital solutions, ArgonWare, responsive design, SEO optimization, creative agency" />
     <meta name="author" content="ArgonWare" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="./logo commercial.png" type="image/png" />
-  </head>
+  </head>             
   <body>
     <nav class="particled">
       <div class="nav-center">
@@ -25,20 +25,22 @@
           <img src="./logo cummercial.png" class="nav-img" alt="ArgonWare" />
           ArgonWare
         </div>
-        <button class="nav-toggle" title="Nav">
+        <button class="nav-toggle" title="Nav" onclick="toggleClass('nav-closed', '.nav-links')">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </nav>
-
+<div class="nav-links nav-closed">
+  <ul class="nav-links-center">
+    <li class="nav-link"><a href="#" onclick="toggleClass('nav-closed', '.nav-links')">Home</li></a>
+    <li class="nav-link"><a href="#about" onclick="toggleClass('nav-closed', '.nav-links')">About</li></a>
+    <li class="nav-link"><a href="#services" onclick="toggleClass('nav-closed', '.nav-links')">Services</li></a>
+    <li class="nav-link"><a href="#contact" onclick="toggleClass('nav-closed', '.nav-links')">Contact</li></a>
+    <li class="nav-link close-nav" onclick="toggleClass('nav-closed', '.nav-links')">Close</li> 
+  </ul>
+</div>   
     <main>
-      <header class="particled" id="home"> 
-        <div class="header-bg-cont">    
-          <div class="header-bg-part1 hh-1"></div>
-          <div class="header-bg-part2 hh-1"></div>
-          <div class="header-bg-part3 hh-1"></div>
-          <div class="header-bg-part4 hh-1"></div>
-        </div>
+      <header class="particled" id="home">
         <div class="header-center">
           <div class="header-text">
           <h1 class="header-heading float particled">Transform Your Digital Presence</h1>
@@ -73,7 +75,7 @@
                   </p>
                 </div>
                 <div class="slide-pic">
-                  <img src="https://placehold.co/600x400?text=Our+Team" alt="ArgonWare Team" class="slide-img" />
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400" alt="ArgonWare Team" class="slide-img" />
                 </div>
               </div>
             </div>
@@ -90,7 +92,7 @@
                   </p>
                 </div>
                 <div class="slide-pic">
-                  <img src="https://placehold.co/600x400?text=Our+Mission" alt="ArgonWare Mission" class="slide-img" />
+                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400" alt="ArgonWare Mission" class="slide-img" />
                 </div>
               </div>
             </div>
@@ -107,7 +109,7 @@
                   </p>
                 </div>
                 <div class="slide-pic">
-                  <img src="https://placehold.co/600x400?text=Our+Approach" alt="ArgonWare Approach" class="slide-img" />
+                  <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&h=400" alt="ArgonWare Approach" class="slide-img" />
                 </div>
               </div>
             </div>
@@ -124,7 +126,7 @@
                   </p>
                 </div>
                 <div class="slide-pic">
-                  <img src="https://placehold.co/600x400?text=Our+Impact" alt="ArgonWare Impact" class="slide-img" />
+                  <img src="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=600&h=400" alt="ArgonWare Impact" class="slide-img" />
                 </div>
               </div>
             </div>
@@ -139,7 +141,7 @@
           
           <div class="service-card float">
             <div class="service-card-pic">
-                 <img src="https://placehold.co/400x300?text=Web+Development" alt="Web Development Services" class="service-img" />
+                 <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&h=300" alt="Web Development Services" class="service-img" />
             </div>
             <a title="web development" href="./services/web-development"><button title="Web dev" class="service-card-btn">  
               <i class="fas fa-code"></i>
@@ -155,7 +157,7 @@
 
           <div class="service-card float">
             <div class="service-card-pic">
-                 <img src="https://placehold.co/400x300?text=UI+Design" alt="UI/UX Design Services" class="service-img" />
+                 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=400&h=300" alt="UI/UX Design Services" class="service-img" />
             </div>
             <a title="design" href="./services/designhtml"><button title="design" class="service-card-btn">
               <i class="fas fa-paint-brush"></i>
@@ -171,7 +173,7 @@
 
           <div class="service-card float">
             <div class="service-card-pic">
-                 <img src="https://placehold.co/400x300?text=Animation" alt="Animation Services" class="service-img" />
+                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&h=300" alt="Animation Services" class="service-img" />
             </div>
             <a title="animation" href="./services/animation.html"><button title="animation" class="service-card-btn">  
               <i class="fas fa-film"></i>
@@ -187,7 +189,7 @@
 
           <div class="service-card float">
             <div class="service-card-pic">
-                 <img src="https://placehold.co/400x300?text=SEO" alt="SEO Services" class="service-img" />
+                 <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=400&h=300" alt="SEO Services" class="service-img" />
             </div>
             <a title="seo" href="./services/seo.html"><button title="seo" class="service-card-btn">  
               <i class="fas fa-search"></i>
@@ -249,7 +251,7 @@
       </section>
     </main>
       <footer>
-        <div class="footer-center">
+        <div class="footer-center"> 
           <ul class="footer-links">
             <li class="footer-link"><a href="#">Home</a></li> 
             <li class="footer-link"><a href="#about">About</a></li>
@@ -259,9 +261,9 @@
             <h2 class="footer-h">&copy; ArgonWare  2025. All rights reserved.</h2>
         </div>
       </footer>
-    <!-- scripts -->
+    <!-- scripts --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
     <script src="app.js" defer></script>
-  </body>
+  </body>   
 </html>
