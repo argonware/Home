@@ -14,27 +14,15 @@ function animationSet() {
   const tl = gsap.timeline({ defaults: { duration: 3 } });
   tl.from("nav", { y: "-100%", ease: "power" })
     .from(
-      ".header-center",
-      { scale: 0, opacity: 0, y: "-100%", ease: "power" }, "<")
-    .from(".header-heading", { height: 0, opacity: 0, ease: "power" }, "<")
-    .from(".header-description", { height: 0, opacity: 0, ease: "power" }, "<")
-    .from(".header-cta", { scale: 0, opacity: 0, ease: "power" }, "<");
+      ".header-center", 
+      { scale: 0, opacity: 0, y: "-100%", ease: "power" }, "<") 
+    .from(".header-heading span", { rotateX: 90, skewX: 90, stagger: 0.25, opacity: 0.1, ease: "power2.inOut" }, "<")
+    .from(".header-description", {  rotateX: 180, skewY: 90, stagger: 0.25, opacity: 0, ease: "power" }, "<")
+    .from(".header-cta", { scale: 0, skewX: 90, opacity: 0, ease: "power" }, "<")
   // slider functionality
   sliderAnim();
 } 
-// header bg settings
-  for (let i = 1; i < 5; i++) {
-    const crEl = document.querySelector(`.header-bg-part${i}`);
-    if (i <= 2) {
-      crEl.style.animation = `header-bg 8s ${Math.floor(
-        Math.random() * 10
-      )}s  infinite alternate`;
-    } else {
-      crEl.style.animation = `header-bg2 8s ${Math.floor(
-        Math.random() * 10
-      )}s  infinite alternate`;
-    }
-  }
+
 // nav is smaller on scroll funtion
   const nav = document.querySelector("nav");
   window.addEventListener("scroll", () => {
@@ -110,6 +98,70 @@ window.addEventListener("resize", () => {
   });
 });
 
+
+function toggleClass(_class, element) {
+  const target = document.querySelector(element);
+  target.classList.toggle(_class);
+} 
+const tl = gsap.timeline({ 
+ repeat: -1,
+ repeatDelay: 0,
+ ScrollTrigger: ".special"
+});
+const animations = [
+    {
+        in: { scale: 0.8, opacity: 0, rotation: 30, yPercent: 100, ease: "bounce.out" },
+        span: { yPercent: 50, opacity: 0, duration: 0.4, stagger: 0.1, ease: "elastic.out(1, 0.5)", filter: "blur(3px)" },
+        out: { xPercent: -100, scale: 1.2, opacity: 0, rotation: -30, duration: 1.5, ease: "power2.in" }
+    },
+    {
+        in: { scale: 0.6, opacity: 0, rotation: -45, xPercent: -100, ease: "back.out(2)" },
+        span: { yPercent: 100, opacity: 0, duration: 0.3, stagger: 0.2, ease: "elastic.out(1, 0.3)", filter: "blur(5px)" },
+        out: { yPercent: 100, scale: 1.5, opacity: 0, rotation: 45, duration: 1.8, ease: "power4.inOut" }
+    },
+    {
+        in: { scale: 0.7, opacity: 0, rotation: 15, yPercent: -50, ease: "expo.out" },
+        span: { xPercent: 50, opacity: 0, duration: 0.5, stagger: 0.15, ease: "elastic.out(1, 0.4)", filter: "blur(2px)" },
+        out: { xPercent: 100, scale: 1.3, opacity: 0, rotation: -15, duration: 1.6, ease: "circ.inOut" }
+    },
+    {
+        in: { scale: 0.9, opacity: 0, rotation: -60, xPercent: 50, ease: "back.out(1.5)" },
+        span: { yPercent: -50, opacity: 0, duration: 0.4, stagger: 0.2, ease: "elastic.out(1, 0.6)", filter: "blur(4px)" },
+        out: { yPercent: -100, scale: 1.4, opacity: 0, rotation: 60, duration: 1.7, ease: "power3.inOut" }
+    },
+    {
+        in: { scale: 0.5, opacity: 0, rotation: 90, yPercent: 50, ease: "elastic.out(1, 0.8)" },
+        span: { xPercent: -50, opacity: 0, duration: 0.6, stagger: 0.1, ease: "elastic.out(1, 0.5)", filter: "blur(6px)" },
+        out: { xPercent: -100, scale: 1.6, opacity: 0, rotation: -90, duration: 1.9, ease: "power4.inOut" }
+    },
+    {
+        in: { scale: 0.4, opacity: 0, rotation: -75, xPercent: -50, ease: "back.out(2)" },
+        span: { yPercent: 50, opacity: 0, duration: 0.3, stagger: 0.2, ease: "elastic.out(1, 0.3)", filter: "blur(3px)" },
+        out: { yPercent: 100, scale: 1.7, opacity: 0, rotation: 75, duration: 1.8, ease: "power4.inOut" }
+    },
+    {
+        in: { scale: 0.6, opacity: 0, rotation: 45, yPercent: -50, ease: "expo.out" },
+        span: { xPercent: 50, opacity: 0, duration: 0.5, stagger: 0.15, ease: "elastic.out(1, 0.4)", filter: "blur(2px)" },
+        out: { xPercent: 100, scale: 1.3, opacity: 0, rotation: -45, duration: 1.6, ease: "circ.inOut" }
+    },
+    {
+        in: { scale: 0.8, opacity: 0, rotation: -30, xPercent: 50, ease: "back.out(1.5)" },
+        span: { yPercent: -50, opacity: 0, duration: 0.4, stagger: 0.2, ease: "elastic.out(1, 0.6)", filter: "blur(4px)" },
+        out: { yPercent: -100, scale: 1.4, opacity: 0, rotation: 30, duration: 1.7, ease: "power3.inOut" }
+    },
+    {
+        in: { scale: 0.7, opacity: 0, rotation: 60, yPercent: 50, ease: "elastic.out(1, 0.8)" },
+        span: { xPercent: -50, opacity: 0, duration: 0.6, stagger: 0.1, ease: "elastic.out(1, 0.5)", filter: "blur(6px)" },
+        out: { xPercent: -100, scale: 1.6, opacity: 0, rotation: -60, duration: 1.9, ease: "power4.inOut" }
+    }
+];
+
+for (let i = 1; i <= 9; i++) {
+    const anim = animations[i - 1];
+    tl.from(`.slide-${i}`, anim.in)
+      .from(`.slide-${i} span`, anim.span)
+      .to(`.slide-${i}`, anim.out);
+}    
 // extra development time only
 // window.addEventListener("load", () => {
 //   setTimeout(() => {
@@ -119,7 +171,3 @@ window.addEventListener("resize", () => {
 //     }
 //   }, 100);
 // });
-function toggleClass(_class, element) {
-  const target = document.querySelector(element);
-  target.classList.toggle(_class);
-} 
